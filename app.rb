@@ -4,6 +4,7 @@ require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
 
+# MakersBNBapp is the controller.
 class MakersBNBapp < Sinatra::Base
   enable :sessions
   configure :development do
@@ -13,15 +14,14 @@ class MakersBNBapp < Sinatra::Base
   session[:spaces] = []
 
   get '/' do
-    # erb :index will go here
-    "Hello World!"
+    @spaces = session[:spaces]
+    erb :index
   end
 
-  post "/new_space" do
-    session[:spaces] << {name: params["name"],
-                      description: params["description"],
-                      price: params["price"]}
-    redirect "/"
+  post '/new_space' do
+    session[:spaces] << { name: params['name'],
+                          description: params['description'],
+                          price: params['price'] }
+    redirect '/'
   end
-
 end
