@@ -10,6 +10,7 @@ class MakersBNBapp < Sinatra::Base
   end
 
   get '/' do
+    # erb :index will go here
     "Hello World!"
   end
 
