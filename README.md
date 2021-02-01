@@ -94,7 +94,9 @@ Table:
 
 ## Feature & Unit Testing
 
-Taking for example User Story 01 (``I’d like to be able to create a listing of a space.``, this presupposes the existence of a user, a space, and the ability to list it. Creating these follows the TDD process:
+Taking for example User Story 01 (``I’d like to be able to create a listing of a space.``), this presupposes the existence of a user, a space, and the ability to list it.
+
+Creating these follows the TDD process:
 1. Composition of pseudocode.
 2. Composition of feature tests.
 3. Composition of unit tests.
