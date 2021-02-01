@@ -169,6 +169,7 @@ id PK | owner_id FK | name | description | price |
 - [ ] Save form contents to session
 - [ ] Display listing on homepage
 
+space: name, description, price
 ---
 
 ## Feature & Unit Testing
