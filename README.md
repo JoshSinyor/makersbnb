@@ -85,6 +85,11 @@ Actions are *italic*. Nouns are **bold**. Attributes of nouns are **_bold italic
 &nbsp;&nbsp;&nbsp;To make sure my space has been registered correctly,<br>
 &nbsp;&nbsp;&nbsp;I would like _to be sent_ an **e-mail** after _creating a new space_.
 
+#### User Story 10
+&nbsp;&nbsp;&nbsp;As a user,<br>
+&nbsp;&nbsp;&nbsp;To make sure my space was updated correctly,<br>
+&nbsp;&nbsp;&nbsp;I would like _to be sent_ an **e-mail** after _updating a space_ with changes.
+
 
 ---
 
