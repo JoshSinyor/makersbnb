@@ -11,10 +11,9 @@ class MakersBNBapp < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  session[:spaces] = []
-
   get '/' do
     @spaces = session[:spaces]
+    session[:spaces] = []
     erb :index
   end
 
