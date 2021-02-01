@@ -37,7 +37,9 @@ This repository supports [Makers](https://makers.tech/) Week 5 group challenge '
 - [ ] Spaces Table
 - [ ] User Story 03
 
-#### 3. Feature & Unit Testing
+#### 3. MVP Planning
+
+#### 4. Feature & Unit Testing
 
 ---
 
@@ -152,6 +154,20 @@ Table: **Spaces**
 
 id PK | owner_id FK | name | description | price |
 --- | --- | --- | --- | ---
+
+---
+
+## MVP Planning
+
+- [ ] Create a listing from form
+- [ ] Show listing on homepage
+
+- [ ] Homepage
+- [ ] Add listing form on homepage
+- [ ] Submit button on homepage form
+- [ ] POST/GET redirect cycle
+- [ ] Save form contents to session
+- [ ] Display listing on homepage
 
 ---
 
