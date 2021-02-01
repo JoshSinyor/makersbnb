@@ -80,6 +80,12 @@ Actions are *italic*. Nouns are **bold**. Attributes of nouns are **_bold italic
 &nbsp;&nbsp;&nbsp;To confirm my account has been created,<br>
 &nbsp;&nbsp;&nbsp;I would like _to be sent_ an **e-mail** after _signing up_.
 
+#### User Story 09
+&nbsp;&nbsp;&nbsp;As a user,<br>
+&nbsp;&nbsp;&nbsp;To make sure my space has been registered correctly,<br>
+&nbsp;&nbsp;&nbsp;I would like _to be sent_ an **e-mail** after _creating a new space_.
+
+
 ---
 
 ## Database Domain Modelling
