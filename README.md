@@ -33,9 +33,8 @@ This repository supports [Makers](https://makers.tech/) Week 5 group challenge '
 - [ ] User Story 20
 
 #### 2. Database Domain Modelling
-- [ ] Users Table
-- [ ] Spaces Table
-- [ ] User Story 03
+- [x] Users Table
+- [x] Spaces Table
 
 #### 3. MVP Planning
 
@@ -159,17 +158,16 @@ id PK | owner_id FK | name | description | price |
 
 ## MVP Planning
 
-- [ ] Create a listing from form
-- [ ] Show listing on homepage
+- [x] Create a listing from form
+- [x] Show listing on homepage
+- [x] Homepage
+- [x] Add listing form on homepage
+- [x] Submit button on homepage form
+- [x] POST/GET redirect cycle
+- [x] Save form contents to session
+- [x] Display listing on homepage
+- [ ] Display listings on homepage
 
-- [ ] Homepage
-- [ ] Add listing form on homepage
-- [ ] Submit button on homepage form
-- [ ] POST/GET redirect cycle
-- [ ] Save form contents to session
-- [ ] Display listing on homepage
-
-space: name, description, price
 ---
 
 ## Feature & Unit Testing
