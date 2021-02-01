@@ -117,7 +117,7 @@ Actions are *italic*. Nouns are **bold**. Attributes of nouns are **_bold italic
 
 ## Database Domain Modelling
 
-The above user stories parse into several classes. In basic Class Responsibility Collaborator modelling, there are three obvious classes - **User**, **Space**, and **Booking**.
+The above user stories parse into several classes. As per [Class Responsibility Collaborator](http://agilemodeling.com/artifacts/crcModel.htm) modelling, there are two obvious classes - **User** and **Space**.
 
 Class: **Space**
 
@@ -138,18 +138,20 @@ Knows own name |
 Knows own username |
 Knows own e-mail |
 Knows own password |
-Knows own telephone number |
+~Knows own telephone number~ |
 Knows own spaces | Space
-
-Class: **Booking**
-
-Responsibility | Collaborators
---- | ---
-
 
 Each class needs its own table, each with columns corresponding to the responsibilities of each class.
 
-Table:
+Table: **Users**
+
+id PK | firstname | lastname | email | username | password
+--- | --- | --- | --- | --- | ---
+
+Table: **Spaces**
+
+id PK | owner_id FK | name | description | price |
+--- | --- | --- | --- | ---
 
 ---
 
