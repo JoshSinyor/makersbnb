@@ -73,6 +73,15 @@ Actions are *italic*. Nouns are **bold**. Attributes of nouns are **_bold italic
 
 ---
 
+## Nice to Have
+
+#### User Story 08
+&nbsp;&nbsp;&nbsp;As a user,<br>
+&nbsp;&nbsp;&nbsp;To confirm my account has been created,<br>
+&nbsp;&nbsp;&nbsp;I would like _to be sent_ an **e-mail** after _signing up_.
+
+---
+
 ## Database Domain Modelling
 
 The above user stories parse into several classes. In basic Class Responsibility Collaborator modelling, there are two obvious classes - **User**, and .
