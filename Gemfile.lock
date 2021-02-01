@@ -103,6 +103,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  x86_64-darwin-19
   x86_64-darwin-20
 
 DEPENDENCIES
@@ -117,6 +118,9 @@ DEPENDENCIES
   sinatra
   sinatra-contrib
   thin
+
+RUBY VERSION
+   ruby 3.0.0p0
 
 BUNDLED WITH
    2.2.7

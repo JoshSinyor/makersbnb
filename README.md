@@ -25,6 +25,7 @@
 ---
 
 ## Parsing User Stories
+###Headline Specifications
 
 Actions are *italic*. Nouns are **bold**. Attributes of nouns are **_bold italics_**.
 
