@@ -1,18 +1,25 @@
 # MakersBNB Challenge
 
-
-
 ## Index
 
 1. Parsing User Stories
-..[x] User Story 01
-..[x] User Story 02
-..[x] User Story 03
-..[x] User Story 04
-..[x] User Story 05
-..[x] User Story 06
-..[x] User Story 07
+- [x] User Story 01
+- [x] User Story 02
+- [x] User Story 03
+- [x] User Story 04
+- [x] User Story 05
+- [x] User Story 06
+- [x] User Story 07
+
 2. Database Domain Modelling
+- [ ] User Story 01
+- [ ] User Story 02
+- [ ] User Story 03
+- [ ] User Story 04
+- [ ] User Story 05
+- [ ] User Story 06
+- [ ] User Story 07
+
 3. Feature & Unit Testing
 
 ## Parsing User Stories
@@ -47,7 +54,7 @@ Nouns are **bold**. Actions are *italic*. Attributes are **_bold italics_**
 
   As a user,
   So I can rent a space,
-  I’d like to be able to _request_ a **space** and it to be _approved by the _**owner**_.
+  I’d like to be able to _request_ a **space** and it to be _approved by the **owner**_.
 
 #### User Story 06
 
@@ -66,6 +73,7 @@ Nouns are **bold**. Actions are *italic*. Attributes are **_bold italics_**
 The above user stories parse into several classes. In basic Class Responsibility Collaborator modelling, there are two obvious classes - **User**, and ****.
 
 Class: **User**
+
 Responsibility | Collaborators
 --- | ---
 Knows own `username` | Peep
@@ -75,6 +83,7 @@ Knows own `firstname` |
 Knows own `lastname` |
 
 Class: **Peep**
+
 Responsibility | Collaborators
 --- | ---
 Knows own `uuid` | User
@@ -84,6 +93,7 @@ Knows own `content` |
 Each class needs its own table, each with columns corresponding to the responsibilities of each class.
 
 Table: **Chitterati**
+
 ``uuid`` | ``email`` | ``password`` | ``firstname`` | ``lastname`` | ``username`` | ``pfp_url``
 --- | --- | --- | --- | --- | --- | ---
 1 | adam@makers.tech | password2 | Adam | Anderson | gardenofadam | https://www.example.com/anderson_adam.jpg
@@ -93,6 +103,7 @@ Table: **Chitterati**
 5 | ellen@makers.tech | asdfghjkl | Ellen | Ellis | ellsbells | https://www.example.com/ellis_ellen.jpg
 
 Table: **Peeps**
+
 ``upid`` | ``uuid`` | ``timestamp`` | ``content``
 --- | --- | --- | ---
 1 | 3 | 2021-01-15 10:05:55 | "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
