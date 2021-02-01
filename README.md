@@ -22,55 +22,59 @@
 
 3. Feature & Unit Testing
 
+---
+
 ## Parsing User Stories
 
-Nouns are **bold**. Actions are *italic*. Attributes are **_bold italics_**
+Actions are *italic*. Nouns are **bold**. Attributes of nouns are **_bold italics_**.
 
 #### User Story 01
 
-  As a user,
-  So that I can list my house,
-  I’d like to be able to *create a* **listing** of a **space**.
+&nbsp;&nbsp;&nbsp;As a user,<br>
+&nbsp;&nbsp;&nbsp;So that I can list my house,<br>
+&nbsp;&nbsp;&nbsp;I’d like to be able to *create a* **listing** of a **space**.
 
 #### User Story 02
 
-  As a user,
-  So that I can make money from all of my properties,
-  I would like to be able to *list multiple locations*.
+&nbsp;&nbsp;&nbsp;As a user,<br>
+&nbsp;&nbsp;&nbsp;So that I can make money from all of my properties,<br>
+&nbsp;&nbsp;&nbsp;I would like to be able to *list multiple locations*.<br>
 
 #### User Story 03
 
-  As a user,
-  So that other users can admire my space and want to stay there,
-  I want to be able to _provide a **name**, **description** and **price**_ for my **space**.
+&nbsp;&nbsp;&nbsp;As a user,<br>
+&nbsp;&nbsp;&nbsp;So that other users can admire my space and want to stay there,<br>
+&nbsp;&nbsp;&nbsp;I want to be able to _provide a **name**, **description** and **price**_ for my **space**.
 
 #### User Story 04
 
-  As a user,
-  So that other users can consider when they might be able to visit,
-  I want to be able to **offer a range of _dates_** when the **space** is **_unoccupied_**.
+&nbsp;&nbsp;&nbsp;As a user,<br>
+&nbsp;&nbsp;&nbsp;So that other users can consider when they might be able to visit,<br>
+&nbsp;&nbsp;&nbsp;I want to be able to **offer a range of _dates_** when the **space** is **_unoccupied_**.
 
 #### User Story 05
 
-  As a user,
-  So I can rent a space,
-  I’d like to be able to _request_ a **space** and it to be _approved by the **owner**_.
+&nbsp;&nbsp;&nbsp;As a user,<br>
+&nbsp;&nbsp;&nbsp;So I can rent a space,<br>
+&nbsp;&nbsp;&nbsp;I’d like to be able to _request_ a **space** and it to be _approved by the **owner**_.
 
 #### User Story 06
 
-  As a user,
-  So that I don’t get double-booked,
-  I want to make sure that a **space** can’t _be **booked** more than once_.
+&nbsp;&nbsp;&nbsp;As a user,<br>
+&nbsp;&nbsp;&nbsp;So that I don’t get double-booked,<br>
+&nbsp;&nbsp;&nbsp;I want to make sure that a **space** can’t _be **booked** more than once_.
 
 #### User Story 07
 
-  As a user,
-  So that my space is still available to other prospective clients,
-  I would like my **space** to _not be **booked** out_ until a **user** _confirms a booking request_.
+&nbsp;&nbsp;&nbsp;As a user,<br>
+&nbsp;&nbsp;&nbsp;So that my space is still available to other prospective clients,<br>
+&nbsp;&nbsp;&nbsp;I would like my **space** to _not be **booked** out_ until a **user** _confirms a booking request_.
+
+---
 
 ## Database Domain Modelling
 
-The above user stories parse into several classes. In basic Class Responsibility Collaborator modelling, there are two obvious classes - **User**, and ****.
+The above user stories parse into several classes. In basic Class Responsibility Collaborator modelling, there are two obvious classes - **User**, and .
 
 Class: **User**
 
@@ -85,6 +89,8 @@ Knows own |
 Each class needs its own table, each with columns corresponding to the responsibilities of each class.
 
 Table:
+
+---
 
 ## Feature & Unit Testing
 
