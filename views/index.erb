@@ -1,0 +1,15 @@
+
+<form action="/spaces" method='post'>
+  <label for="name">New space name:</label>
+  <input type="text" name="name">
+  <label for="description">Space description:</label>
+  <input type="text" name="description">
+  <label for="price">Price per night:</label>
+  <input type="text" name="price">
+  <input type="submit" name="submit">
+</form>
+
+
+<% @spaces.each do |space| %>
+<li><%= space[:name] %></li>
+<% end %>
