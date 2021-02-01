@@ -90,7 +90,10 @@ Actions are *italic*. Nouns are **bold**. Attributes of nouns are **_bold italic
 &nbsp;&nbsp;&nbsp;To make sure my space was updated correctly,<br>
 &nbsp;&nbsp;&nbsp;I would like _to be sent_ an **e-mail** after _updating a space_ with changes.
 
-
+#### User Story 11
+&nbsp;&nbsp;&nbsp;As a user,<br>
+&nbsp;&nbsp;&nbsp;To make sure I know when a user books my space,<br>
+&nbsp;&nbsp;&nbsp;I would like _to be sent_ an **e-mail** after a _user confirms booking_ my **space**.
 ---
 
 ## Database Domain Modelling
