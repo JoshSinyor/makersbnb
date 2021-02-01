@@ -1,82 +1,69 @@
-# Chitter Challenge
+# MakersBNB Challenge
 
-A repository for Makers Week 4 weekend challenge project 'chitter-challenge'.
+
 
 ## Index
 
 1. Parsing User Stories
-..[ ] User Story 01
-..[ ] User Story 02
-..[ ] User Story 03
-..[ ] User Story 04
-..[ ] User Story 05
-..[ ] User Story 06
-..[ ] User Story 07
+..[x] User Story 01
+..[x] User Story 02
+..[x] User Story 03
+..[x] User Story 04
+..[x] User Story 05
+..[x] User Story 06
+..[x] User Story 07
 2. Database Domain Modelling
 3. Feature & Unit Testing
 
 ## Parsing User Stories
 
+Nouns are **bold**. Actions are *italic*. Attributes are **_bold italics_**
+
 #### User Story 01
 
-```
-As a user,
-So that I list my house,
-I’d like to be able to create a listing.
-```
+  As a user,
+  So that I can list my house,
+  I’d like to be able to *create a* **listing** of a **space**.
 
 #### User Story 02
 
-```
-As a user,
-So that I can make money from all of my properties,
-I would like to be able to list multiple locations.
-```
+  As a user,
+  So that I can make money from all of my properties,
+  I would like to be able to *list multiple locations*.
 
 #### User Story 03
 
-```
-As a user,
-So that other users can admire my space and want to stay there,
-I want to be able to post a name, description and price for my space.
-```
+  As a user,
+  So that other users can admire my space and want to stay there,
+  I want to be able to _provide a **name**, **description** and **price**_ for my **space**.
 
 #### User Story 04
 
-```
-As a user,
-So that other users can consider when they might be able to visit,
-I want to be able to offer a range of dates when the space is unoccupied.
-```
+  As a user,
+  So that other users can consider when they might be able to visit,
+  I want to be able to **offer a range of _dates_** when the **space** is **_unoccupied_**.
 
 #### User Story 05
 
-```
-As a user,
-So I can rent a space,
-I’d like to be able to request a space and it to be approved by the owner.
-```
+  As a user,
+  So I can rent a space,
+  I’d like to be able to _request_ a **space** and it to be _approved by the _**owner**_.
 
 #### User Story 06
 
-```
-As a user,
-So that I don’t get double-booked,
-I want to make sure that a space can’t be booked more than once.
-```
-
+  As a user,
+  So that I don’t get double-booked,
+  I want to make sure that a **space** can’t _be **booked** more than once_.
 
 #### User Story 07
 
-```
-As a user,
-So that my space is still available to other prospective clients,
-I would like my space to not be booked out until a user confirms a booking request.
-```
+  As a user,
+  So that my space is still available to other prospective clients,
+  I would like my **space** to _not be **booked** out_ until a **user** _confirms a booking request_.
 
 ## Database Domain Modelling
 
-The above user stories parse into several classes. In basic Class Responsibility Collaborator modelling, there are two obvious classes - **User**, and **Peep**.
+The above user stories parse into several classes. In basic Class Responsibility Collaborator modelling, there are two obvious classes - **User**, and ****.
 
 Class: **User**
 Responsibility | Collaborators
@@ -86,7 +73,6 @@ Knows own `password` |
 Knows own `e-mail` |
 Knows own `firstname` |
 Knows own `lastname` |
-Knows own `pfp` url |
 
 Class: **Peep**
 Responsibility | Collaborators
