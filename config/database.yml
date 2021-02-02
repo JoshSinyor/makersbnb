@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 development:
-  adapter: postgresql 
+  adapter: postgresql
   database: makersbnb-development
 
 test:

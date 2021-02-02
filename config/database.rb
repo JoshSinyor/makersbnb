@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 database_name = "makersbnb-#{MakersBNBApp.environment}"
 db = URI.parse(ENV['DATABASE_URL'] || "postgres://localhost/#{database_name}")
 
