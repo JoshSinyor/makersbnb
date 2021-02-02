@@ -24,7 +24,7 @@
     <div style="border: 2px solid darkgreen">
     <%= space[:space_name]%> <br/>
       <%= space[:description] %> <br/>
-      £<%= space[:price] %>/night <br/>
+      £<%= '%.2f' % space[:price] %>/night <br/>
       </div>
     <% end %>
   <% end %>

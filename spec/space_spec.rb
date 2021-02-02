@@ -10,6 +10,6 @@ describe Space do
 
     space = Space.where("price": "10000").first
 
-    expect(space.space_name).to_eq 'Buckingham Castle'
+    expect(space.space_name).to eq 'Buckingham Castle'
   end
 end
