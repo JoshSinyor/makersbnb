@@ -2,10 +2,6 @@
 
 # Home page feature test
 feature 'HomePage' do
-  scenario 'user visits homepage' do
-    visit('/')
-    expect(page).to have_content 'Makers BnB'
-  end
 
   scenario 'user adds listing' do
     add_one_space(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE)
