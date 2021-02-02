@@ -3,10 +3,13 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
+require "sinatra/activerecord"
+require "bcrypt"
 
 # MakersBNBapp is the controller.
 class MakersBNBapp < Sinatra::Base
   enable :sessions
+  register Sinatra::ActiveRecordExtension
   configure :development do
     register Sinatra::Reloader
   end

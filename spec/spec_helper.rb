@@ -7,7 +7,8 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 
-require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require_relative "../app"
+
 Capybara.app = MakersBNBapp
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([

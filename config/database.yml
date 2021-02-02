@@ -1,0 +1,12 @@
+development:
+  adapter: postgresql 
+  database: makersbnb-development
+
+test:
+  adapter: postgresql
+  database: makersbnb-test
+
+
+production:
+  adapter: postgresql
+  database: makersbnb-production
