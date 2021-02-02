@@ -6,6 +6,14 @@ This repository supports [Makers](https://makers.tech/) Week 5 group challenge '
 2. **Licensing:** This project is licensed under the [GNU GPL v.3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
 3. **Authors:** This repository is a joint project between its collaborators.
 
+Database installation/setup
+(rake -T to see the possible commands)
+rake db:create
+rake db:schema:load
+
+
+
+
 ---
 
 ## Table of Contents

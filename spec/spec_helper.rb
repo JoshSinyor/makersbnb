@@ -18,8 +18,12 @@ SimpleCov.start
 
 RSpec.configure do |config|
   config.before(:each) do
+    ActiveRecord::Base.subclasses.each(&:delete_all)
   end
+
   config.after(:suite) do
+    ActiveRecord::Base.subclasses.each(&:delete_all)
+    
     config.expect_with :rspec do |expectations|
       expectations.include_chain_clauses_in_custom_matcher_descriptions = true
     end
