@@ -1,10 +1,7 @@
 # frozen_string_literal: true
 
-# Home page feature test
-feature 'HomePage' do
-
-# RSpec feature tests do not currently respect 'required' fields.
-
+feature 'Homepage' do
+  # RSpec feature tests do not currently respect 'required' fields.
   scenario 'user adds listing' do
     add_one_space(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE, DEFAULT_EMAIL)
 
@@ -14,7 +11,7 @@ feature 'HomePage' do
     expect(page).to have_content DEFAULT_EMAIL
   end
 
-  scenario "user inputs email address" do
+  scenario 'user inputs email address' do
     add_one_space(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE, DEFAULT_EMAIL)
 
     expect(page).to have_content DEFAULT_EMAIL
