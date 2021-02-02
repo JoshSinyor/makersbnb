@@ -3,8 +3,9 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
-require "sinatra/activerecord"
-require "bcrypt"
+require 'sinatra/activerecord'
+require 'bcrypt'
+require './lib/space'
 
 # MakersBNBapp is the controller.
 class MakersBNBapp < Sinatra::Base
@@ -15,15 +16,15 @@ class MakersBNBapp < Sinatra::Base
   end
 
   get '/' do
-    @spaces = session[:spaces]
-    session[:spaces] = []
+    @spaces = Space.all
     erb :index
   end
 
   post '/new_space' do
-    session[:spaces] << { name: params['name'],
-                          description: params['description'],
-                          price: params['price'] }
-    redirect '/'
+    space = Space.new(  "space_name": params['name'],
+                "description": params['description'],
+                "price": params['price'] )
+    space.save
+    redirect "/"
   end
 end
