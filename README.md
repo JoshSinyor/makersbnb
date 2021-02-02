@@ -17,7 +17,7 @@ This repository supports [Makers](https://makers.tech/) Week 5 group challenge '
 
 2. **Licensing:** This project is licensed under the [GNU GPL v.3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
-3. **Authors:** This repository is a joint project between its collaborators; @HamishArro, @RTurney @JoshSinyor, and @mscwilson.
+3. **Authors:** This repository is a joint project between its collaborators; @HamishArro, @RTurney, @JoshSinyor, and @mscwilson.
 
 ---
 
@@ -179,7 +179,7 @@ id PK | owner_id FK | name | description | price |
 - [x] POST/GET redirect cycle
 - [x] Save form contents to session
 - [x] Display listing on homepage
-- [ ] Display listings on homepage
+- [x] Display listings on homepage
 
 ---
 
