@@ -9,27 +9,21 @@ feature 'HomePage' do
 
   scenario 'user adds listing' do
     visit('/')
-    fill_in :name, with: 'space'
-    fill_in :description, with: 'a space'
-    fill_in :price, with: '1.00'
+    fill_in :name, with: DEFAULT_SPACE_NAME
+    fill_in :description, with: DEFAULT_SPACE_DESCRIPTION
+    fill_in :price, with: DEFAULT_SPACE_PRICE
     click_button :submit
 
-    expect(page).to have_content 'space a space £1.00'
+    expect(page).to have_content DEFAULT_SPACE_NAME
+    expect(page).to have_content DEFAULT_SPACE_DESCRIPTION
+    expect(page).to have_content DEFAULT_SPACE_PRICE
   end
 
   scenario 'page displays multiple listings' do
-    visit('/')
-    fill_in :name, with: 'space'
-    fill_in :description, with: 'a space'
-    fill_in :price, with: '1.00'
-    click_button :submit
+    add_one_space(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE)
+    add_one_space('Windsor Castle', 'Bring back the guillotine.', '6.25')
 
-    fill_in :name, with: 'space_2'
-    fill_in :description, with: 'a space_2'
-    fill_in :price, with: '2.00'
-    click_button :submit
-
-    expect(page).to have_content 'space a space £1.00'
-    expect(page).to have_content 'space_2 a space_2 £2.00'
+    expect(page).to have_content DEFAULT_SPACE_NAME
+    expect(page).to have_content 'Windsor Castle'
   end
 end

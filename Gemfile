@@ -4,14 +4,14 @@ source 'https://rubygems.org'
 
 ruby '3.0.0'
 
-gem "sinatra"
+gem 'activerecord'
+gem 'bcrypt'
+gem 'pg'
+gem 'rake'
+gem 'sinatra'
+gem 'sinatra-activerecord'
 gem 'sinatra-contrib'
 gem 'thin'
-gem 'pg'
-gem "activerecord"
-gem "sinatra-activerecord"
-gem "rake"
-gem "bcrypt"
 
 group :test do
   gem 'capybara'

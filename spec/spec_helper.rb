@@ -6,6 +6,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'features/web_helpers'
 
 require_relative "../app"
 
@@ -23,7 +24,7 @@ RSpec.configure do |config|
 
   config.after(:suite) do
     ActiveRecord::Base.subclasses.each(&:delete_all)
-    
+
     config.expect_with :rspec do |expectations|
       expectations.include_chain_clauses_in_custom_matcher_descriptions = true
     end
