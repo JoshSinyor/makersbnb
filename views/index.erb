@@ -1,17 +1,31 @@
 <h1>Makers BnB</h1>
 
-<form action="/new_space" method='post'>
-  <label for="name">New space name:</label>
-  <input type="text" name="name">
-  <label for="description">Space description:</label>
-  <input type="text" name="description">
-  <label for="price">Price per night:</label>
-  <input type="text" name="price">
-  <input type="submit" name="submit">
-</form>
+<div>
+  <h3>Add your property to Makers BNB</h3>
+  <form action="/new_space" method='post'>
+    <label for="name">Your space name:</label><br>
+    <input type="text" name="name"><br>
 
-<% if @spaces %>
-  <% @spaces.each do |space| %>
-  <li><%= space[:name]%> <%= space[:description] %> <%= space[:price] %> </li>
+    <label for="description">Description:</label><br>
+    <textarea name="description" cols="40" rows="5" placeholder="Please include your email address in the description" style="resize: none"></textarea><br>
+
+    <label for="price">Price per night:</label><br>
+    <input type="text" name="price"><br>
+    <input type="submit" name="submit">
+  </form>
+</div>
+<br/>
+<br/>
+
+<div>
+  <h3>Registered spaces. Contact the lister to book!</h3>
+  <% if @spaces %>
+    <% @spaces.each do |space| %>
+    <div style="border: 2px solid darkgreen">
+    <%= space[:name]%> <br/>
+      <%= space[:description] %> <br/>
+      £<%= space[:price] %>/night <br/>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>

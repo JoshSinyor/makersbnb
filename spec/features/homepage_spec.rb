@@ -11,22 +11,22 @@ feature 'HomePage' do
     visit('/')
     fill_in :name, with: 'space'
     fill_in :description, with: 'a space'
-    fill_in :price, with: '£1.00'
+    fill_in :price, with: '1.00'
     click_button :submit
 
     expect(page).to have_content 'space a space £1.00'
   end
 
-  scenario 'user adds listing' do
+  scenario 'page displays multiple listings' do
     visit('/')
     fill_in :name, with: 'space'
     fill_in :description, with: 'a space'
-    fill_in :price, with: '£1.00'
+    fill_in :price, with: '1.00'
     click_button :submit
 
     fill_in :name, with: 'space_2'
     fill_in :description, with: 'a space_2'
-    fill_in :price, with: '£2.00'
+    fill_in :price, with: '2.00'
     click_button :submit
 
     expect(page).to have_content 'space a space £1.00'
