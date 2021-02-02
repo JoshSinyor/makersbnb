@@ -10,14 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_202_150_113) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+ActiveRecord::Schema.define(version: 2021_02_02_154516) do
 
-  create_table 'spaces', force: :cascade do |t|
-    t.string 'space_name', limit: 100
-    t.text 'description'
-    t.decimal 'price'
-    t.bigint 'user_id'
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "spaces", force: :cascade do |t|
+    t.string "space_name", limit: 100
+    t.text "description"
+    t.decimal "price"
+    t.bigint "user_id"
+    t.string "email"
   end
+
 end
