@@ -132,6 +132,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   bcrypt
+  bundler
   capybara
   pg
   rake
