@@ -23,7 +23,8 @@ class MakersBNBapp < Sinatra::Base
   post '/new_space' do
     space = Space.new(space_name: params['name'],
                       description: params['description'],
-                      price: params['price'])
+                      price: params['price'],
+                    email: params['email'])
     space.save
     redirect '/'
   end
