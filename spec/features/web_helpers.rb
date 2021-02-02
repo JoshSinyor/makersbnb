@@ -13,3 +13,12 @@ def add_one_space(space_name, space_description, space_price, space_email)
   fill_in :email, with: space_email
   click_button :submit
 end
+
+def direct_add_space_to_db
+  space = Space.new(space_name: DEFAULT_SPACE_NAME,
+                    description: DEFAULT_SPACE_DESCRIPTION,
+                    price: DEFAULT_SPACE_PRICE,
+                    email: DEFAULT_EMAIL)
+  space.save
+  space
+end

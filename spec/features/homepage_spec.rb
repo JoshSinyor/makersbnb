@@ -15,12 +15,7 @@ feature 'HomePage' do
   end
 
   scenario "user inputs email address" do
-    visit '/'
-    fill_in :name, with: DEFAULT_SPACE_NAME
-    fill_in :description, with: DEFAULT_SPACE_DESCRIPTION
-    fill_in :price, with: DEFAULT_SPACE_PRICE
-    fill_in :email, with: DEFAULT_EMAIL
-    click_button :submit
+    add_one_space(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE, DEFAULT_EMAIL)
 
     expect(page).to have_content DEFAULT_EMAIL
   end
