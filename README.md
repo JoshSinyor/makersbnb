@@ -2,17 +2,24 @@
 
 This repository supports [Makers](https://makers.tech/) Week 5 group challenge 'makersbnb'.
 
-1. **Installation:** This project requires Ruby 3.0.0. Install Ruby 3.0.0, fork this repository, and run ``bundle``.
+1. **Installation:**
+  1. It is recommended that prior to installation, you ensure your development environment is updated. In particular, we recommend you run commands ``softwareupdate --install -a`` and ``rvm get stable`` to ensure your computer and rvm installations are current.
+  2. This project requires Ruby 3.0.0. If you're unsure as to whether you have 3.0.0 installed, run ``rvm list`` and ensure that 3.0.0 is listed. If it is not, install it with ``rvm install 3.0.0``.
+  3. Clone or fork this repository.
+  4. To install the necessary Gems, run command ``bundle``.
+    - Some users experience an error during the ``bundle``ing process owing to difficulties install dependencies of ``thin``.
+    - To correct this error, run command ``gem install thin -v '1.6.4' -- --with-cflags="-Wno-error=implicit-function-declaration"``.
+    - Then run command ``gem install thin`` to install the current version of ``thin``.
+    - Then run command ``gem uninstall thin``, and uninstall version 1.6.4 with command ``1``.
+    - Repeat step 4 to resume the ``bundle`` process.
+  5. To create the databases, run command ``rake db:create``.
+  6. To refresh the databases, which is **recommended only after structural changes have been made to a database**, run command ``rake db:schema:load``.
+
+
 2. **Licensing:** This project is licensed under the [GNU GPL v.3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
+
+
 3. **Authors:** This repository is a joint project between its collaborators.
-
-Database installation/setup
-(rake -T to see the possible commands)
-rake db:create
-rake db:schema:load
-
-
-
 
 ---
 
