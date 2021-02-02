@@ -8,15 +8,22 @@ feature 'HomePage' do
   end
 
   scenario 'user adds listing' do
-    visit('/')
-    fill_in :name, with: DEFAULT_SPACE_NAME
-    fill_in :description, with: DEFAULT_SPACE_DESCRIPTION
-    fill_in :price, with: DEFAULT_SPACE_PRICE
-    click_button :submit
+    add_one_space(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE)
 
     expect(page).to have_content DEFAULT_SPACE_NAME
     expect(page).to have_content DEFAULT_SPACE_DESCRIPTION
     expect(page).to have_content DEFAULT_SPACE_PRICE
+  end
+
+  scenario "user inputs email address" do
+    visit('/')
+    fill_in :name, with: DEFAULT_SPACE_NAME
+    fill_in :description, with: DEFAULT_SPACE_DESCRIPTION
+    fill_in :price, with: DEFAULT_SPACE_PRICE
+    fill_in :email, with: DEFAULT_EMAIL
+    click_button :submit
+
+    expect(page).to have_content DEFAULT_EMAIL
   end
 
   scenario 'page displays multiple listings' do

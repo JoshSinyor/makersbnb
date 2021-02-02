@@ -3,6 +3,7 @@
 DEFAULT_SPACE_NAME = 'Modest Family Home'
 DEFAULT_SPACE_DESCRIPTION = 'Two up, two down, heinously overpriced. Property is theft.'
 DEFAULT_SPACE_PRICE = '5.20'
+DEFAULT_EMAIL = "test@test.com"
 
 def add_one_space(space_name, space_description, space_price)
   visit('/')
