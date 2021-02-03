@@ -211,3 +211,4 @@ List for Hamish:
 10. Added feature test for 'add new space button'
 11. Moved add new space form to a new page, only accessible by signed in users
 12. Created web helper for signing in new users
+13. Refactored web_helper fill_in_space_form. Removed 'visit /'
