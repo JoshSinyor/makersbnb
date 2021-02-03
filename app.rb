@@ -30,6 +30,7 @@ class MakersBNBapp < Sinatra::Base
   end
 
   get '/listing-:id' do
-    'This is the page for this listing.'
+    @space = Space.where(id: params[:id])[0]
+    erb :listing
   end
 end
