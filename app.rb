@@ -28,4 +28,8 @@ class MakersBNBapp < Sinatra::Base
     space.save
     redirect '/'
   end
+
+  get '/listing-:id' do
+    'This is the page for this listing.'
+  end
 end
