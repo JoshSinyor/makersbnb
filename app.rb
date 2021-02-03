@@ -6,6 +6,7 @@ require 'sinatra/reloader'
 require 'sinatra/activerecord'
 require 'bcrypt'
 require './lib/space'
+require './lib/user'
 
 # MakersBNBapp is the controller.
 class MakersBNBapp < Sinatra::Base
@@ -42,8 +43,8 @@ class MakersBNBapp < Sinatra::Base
 
   post '/new_user' do
     encrypted_password = BCrypt::Password.create(params[:password])
-    user = User.new(user_name: params['name'],
-                      user_email: params['email'],
+    user = User.new(user_name: params['user_name'],
+                      user_email: params['user_email'],
                       password_digest: encrypted_password
                     )
     user.save

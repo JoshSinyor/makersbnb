@@ -4,7 +4,7 @@ feature 'user registration' do
     click_button 'register'
     fill_in :user_name, with: DEFAULT_USER_NAME
     fill_in :user_email, with: DEFAULT_USER_EMAIL
-    # fill_in :password, with: DEFAULT_USER_PASSWORD
+    fill_in :password, with: DEFAULT_USER_PASSWORD
     click_button 'save'
 
     user = User.where(user_email: DEFAULT_USER_EMAIL).first
