@@ -37,4 +37,25 @@ feature 'Homepage' do
     expect(page).to have_content DEFAULT_SPACE_NAME
     expect(page).to have_content 'Windsor Castle'
   end
+
+  scenario "enter space form is now on a separate page" do
+    visit "/"
+    register_new_user(DEFAULT_USER_NAME, DEFAULT_USER_EMAIL, DEFAULT_USER_PASSWORD)
+    sign_in
+
+    click_button "Add your space"
+    expect(current_path).to eq "/add_space"
+    fill_in :name, with: DEFAULT_SPACE_NAME
+    fill_in :description, with: DEFAULT_SPACE_DESCRIPTION
+    fill_in :price, with: DEFAULT_SPACE_PRICE
+    fill_in :email, with: DEFAULT_EMAIL
+
+    click_button 'Submit'
+
+    expect(current_path).to eq "/"
+    expect(page).to have_content DEFAULT_SPACE_NAME
+  end
+
+
+
 end

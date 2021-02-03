@@ -34,3 +34,10 @@ def register_new_user(user_name, user_email, user_password)
   fill_in :password, with: user_password
   click_button 'Save'
 end
+
+def sign_in
+  click_button 'Sign In'
+  fill_in :user_email, with: DEFAULT_USER_EMAIL
+  fill_in :password, with: DEFAULT_USER_PASSWORD
+  click_button 'Sign In'
+end
