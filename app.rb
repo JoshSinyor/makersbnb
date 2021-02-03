@@ -35,4 +35,19 @@ class MakersBNBapp < Sinatra::Base
     @space = Space.where(id: params[:id])[0]
     erb :listing
   end
+
+  get '/register' do
+    erb :register
+  end
+
+  post '/new_user' do
+    encrypted_password = BCrypt::Password.create(params[:password])
+    user = User.new(user_name: params['name'],
+                      user_email: params['email'],
+                      password_digest: encrypted_password
+                    )
+    user.save
+    redirect '/'
+  end
+
 end
