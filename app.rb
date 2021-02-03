@@ -35,4 +35,8 @@ class MakersBNBapp < Sinatra::Base
     @space = Space.where(id: params[:id])[0]
     erb :listing
   end
+
+  get '/register' do
+    erb :register
+  end
 end
