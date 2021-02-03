@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-feature 'listing' do
-  scenario "takes us to a listing's page" do
+feature 'Listing' do
+  scenario 'listing has a page' do
     space = direct_add_space_to_db
     visit('/')
     click_on DEFAULT_SPACE_NAME # We would rather reference this by id
@@ -11,7 +11,7 @@ feature 'listing' do
   end
 
   scenario 'listings page has listing content' do
-    space = direct_add_space_to_db
+    direct_add_space_to_db # The variable 'space' does not need to be assigned unless we are referencing by id
     visit('/')
     click_on DEFAULT_SPACE_NAME # We would rather reference this by id
 

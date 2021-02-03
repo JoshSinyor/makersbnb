@@ -1,4 +1,6 @@
-feature 'user registration' do
+# frozen_string_literal: true
+
+feature 'User Registration' do
   scenario 'user registers' do
     visit '/'
     click_button 'register'

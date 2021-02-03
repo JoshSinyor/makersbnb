@@ -25,3 +25,12 @@ def direct_add_space_to_db
   space.save
   space
 end
+
+def register_new_user(user_name, user_email, user_password)
+  visit '/'
+  click_button 'register'
+  fill_in :user_name, with: user_name
+  fill_in :user_email, with: user_email
+  fill_in :password, with: user_password
+  click_button 'save'
+end
