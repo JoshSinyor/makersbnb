@@ -194,3 +194,14 @@ Creating these follows the TDD process:
 4. Composition of code.
 5. Running of feature and unit tests.
 6. Refactoring, and if necessary correction of code.
+
+---
+
+List for Hamish:
+
+1. [Issue #30](https://github.com/JoshSinyor/makersbnb/issues/30) raised for Nice to Haves
+2. Feature test for signing in
+3. Signing in button for index.erb
+4. POST/GET cycle for signing in
+5. Set up authentication for signing in
+6. Miranda can't see this.
