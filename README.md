@@ -203,5 +203,8 @@ List for Hamish:
 2. Feature test for signing in
 3. Signing in button for index.erb
 4. POST/GET cycle for signing in
-5. Set up authentication for signing in
-6. Miranda can't see this.
+5. Set up authentication for signing in, saving user into session
+6. Added welcome message for user on the index page (welcome big H!)
+7. Feature test for logging out
+8. Sign out button on index page
+9. Signed out user no longer sees welcome message
