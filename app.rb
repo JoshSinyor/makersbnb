@@ -30,4 +30,9 @@ class MakersBNBapp < Sinatra::Base
     space.save
     redirect '/'
   end
+
+  get '/listing-:id' do
+    @space = Space.where(id: params[:id])[0]
+    erb :listing
+  end
 end
