@@ -208,3 +208,6 @@ List for Hamish:
 7. Feature test for logging out
 8. Sign out button on index page
 9. Signed out user no longer sees welcome message
+10. Added feature test for 'add new space button'
+11. Moved add new space form to a new page, only accessible by signed in users
+12. Created web helper for signing in new users
