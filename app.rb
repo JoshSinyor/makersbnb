@@ -64,4 +64,9 @@ class MakersBNBapp < Sinatra::Base
       redirect '/sign_in'
     end
   end
+
+  get '/sign_out' do
+    session[:session_user] = nil
+    redirect '/'
+  end
 end
