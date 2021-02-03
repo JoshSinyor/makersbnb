@@ -214,3 +214,9 @@ List for Hamish:
 13. Refactored web_helper fill_in_space_form. Removed 'visit /'
 14. Added 'direct_add_space_to_db' method in web helpers
 15. Refactored tests to use 'before'
+
+Plan for Thursday:
+* add new space only available to signed in users
+* link user with added space
+* booking form on description page
+* taskbar please? 
