@@ -49,4 +49,12 @@ class MakersBNBapp < Sinatra::Base
     user.save
     redirect '/'
   end
+
+  get '/sign_in' do
+    erb :sign_in
+  end
+
+  post '/sign_in' do
+    redirect '/'
+  end
 end
