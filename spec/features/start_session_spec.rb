@@ -3,11 +3,7 @@
 feature 'starting session' do
   scenario 'welcomed by name after session start' do
     visit '/'
-    click_button 'register'
-    fill_in :user_name, with: DEFAULT_USER_NAME
-    fill_in :user_email, with: DEFAULT_USER_EMAIL
-    fill_in :password, with: DEFAULT_USER_PASSWORD
-    click_button 'Save'
+    register_new_user(DEFAULT_USER_NAME, DEFAULT_USER_EMAIL, DEFAULT_USER_PASSWORD)
 
     click_button 'Sign In'
     expect(current_path).to eq '/sign_in'

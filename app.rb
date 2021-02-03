@@ -22,8 +22,12 @@ class MakersBNBapp < Sinatra::Base
     erb :index
   end
 
+  get '/new_space' do
+    erb :new_space
+  end
+
   post '/new_space' do
-    space = Space.new(space_name: params['name'],
+    space = Space.new(space_name: params['space_name'],
                       description: params['description'],
                       price: params['price'],
                       email: params['email'],
