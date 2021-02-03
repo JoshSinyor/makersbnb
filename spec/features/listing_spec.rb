@@ -10,7 +10,7 @@ feature 'listing' do
     expect(page.status_code).to eq 200 # Is this necessary when the path will be 404 if it doesn't equal 200?
   end
 
-  scenario "listings page has listing content" do
+  scenario 'listings page has listing content' do
     space = direct_add_space_to_db
     visit('/')
     click_on DEFAULT_SPACE_NAME # We would rather reference this by id

@@ -44,11 +44,9 @@ class MakersBNBapp < Sinatra::Base
   post '/new_user' do
     encrypted_password = BCrypt::Password.create(params[:password])
     user = User.new(user_name: params['user_name'],
-                      user_email: params['user_email'],
-                      password_digest: encrypted_password
-                    )
+                    user_email: params['user_email'],
+                    password_digest: encrypted_password)
     user.save
     redirect '/'
   end
-
 end
