@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-feature "starting session" do 
+feature "starting session" do
 
   scenario "welcomed by name after session start" do
     visit "/"
@@ -17,8 +17,6 @@ feature "starting session" do
     click_button "Sign in"
 
     expect(current_path).to eq "/"
-    expect(page).to have_content DEFAULT_USER_NAME
+    expect(page).to have_content "Welcome Big #{DEFAULT_USER_NAME[0]}!"
   end
-
-
 end
