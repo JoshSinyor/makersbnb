@@ -55,6 +55,12 @@ class MakersBNBapp < Sinatra::Base
   end
 
   post '/sign_in' do
-    redirect '/'
+    user = User.where("user_email": params["user_email"]).first
+    if user.authenticate(params["password"])
+      session[:session_user_id] = user.id
+      redirect "/"
+    else
+      redirect "/sign_in"
+    end
   end
 end
