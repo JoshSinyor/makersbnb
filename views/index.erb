@@ -25,12 +25,14 @@
   <h3>Registered spaces. Contact the lister to book!</h3>
   <% if @spaces %>
     <% @spaces.each do |space| %>
-    <div style="border: 2px solid darkgreen">
-    <%= space[:space_name]%> <br/>
-      <%= space[:description] %> <br/>
-      £<%= '%.2f' % space[:price] %>/night <br/>
-      <%= space[:email] %> <br>
-      </div>
+      <a href="listing-<%= space[:id] %>" style="text-decoration: none">
+        <div style="border: 2px solid darkgreen" id="listing-<%= space[:id] %>">
+          <%= space[:space_name]%><br/>
+          <%= space[:description] %><br/>
+          <%= '£%.2f' % space[:price] %>/night<br/>
+          <%= space[:email] %> <br>
+        </div>
+      </a>
     <% end %>
   <% end %>
 </div>
