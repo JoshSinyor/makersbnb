@@ -28,9 +28,9 @@ end
 
 def register_new_user(user_name, user_email, user_password)
   visit '/'
-  click_button 'register'
+  click_button 'Register'
   fill_in :user_name, with: user_name
   fill_in :user_email, with: user_email
   fill_in :password, with: user_password
-  click_button 'save'
+  click_button 'Save'
 end

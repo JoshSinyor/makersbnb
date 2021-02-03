@@ -18,11 +18,11 @@ class MakersBNBapp < Sinatra::Base
 
   get '/' do
     @spaces = Space.all
-    if session[:session_user]
-      @welcome = "Welcome Big #{session[:session_user].user_name[0]}!"
-    else
-      @welcome = "Real gangstas make an account!"
-    end
+    @welcome = if session[:session_user]
+                 "Welcome Big #{session[:session_user].user_name[0]}!"
+               else
+                 'Real gangstas make an account!'
+               end
     erb :index
   end
 
@@ -60,12 +60,12 @@ class MakersBNBapp < Sinatra::Base
   end
 
   post '/sign_in' do
-    user = User.where("user_email": params["user_email"]).first
-    if user.authenticate(params["password"])
+    user = User.where(user_email: params['user_email']).first
+    if user.authenticate(params['password'])
       session[:session_user] = user
-      redirect "/"
+      redirect '/'
     else
-      redirect "/sign_in"
+      redirect '/sign_in'
     end
   end
 end
