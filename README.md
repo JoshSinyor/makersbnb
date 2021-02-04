@@ -159,12 +159,17 @@ Each class needs its own table, each with columns corresponding to the responsib
 
 Table: **Users**
 
-id PK | firstname | lastname | email | username | password
---- | --- | --- | --- | --- | ---
+id PK | user_name | user_email | password_digest
+--- | --- | --- | ---
 
 Table: **Spaces**
 
-id PK | owner_id FK | name | description | price |
+id PK | space_name | description | price | user_id FK | start_date | end_date
+--- | --- | --- | --- | --- | --- | ---
+
+Table: **Bookings**
+
+id PK | start_date | space_id FK | user_id FK | accepted
 --- | --- | --- | --- | ---
 
 ---
@@ -219,4 +224,4 @@ Plan for Thursday:
 * add new space only available to signed in users
 * link user with added space
 * booking form on description page
-* taskbar please? 
+* taskbar please?

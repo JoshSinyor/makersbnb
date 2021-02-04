@@ -43,6 +43,7 @@ class MakersBNBapp < Sinatra::Base
   end
 
   get '/listing-:id' do
+    @login_status = session[:session_user]
     @booking = session[:booking_requested]
     if params[:id] == ":id"
       params[:id] = session[:listing_id]
