@@ -6,6 +6,9 @@
 
 <h1>Makers BnB</h1>
 
+<%= flash[:invalid_credentials] %>
+<%= flash[:not_signed_in] %>
+
 <div>
   <h3>Sign into your account at Makers BnB</h3>
   <form action="/sign_in" method='post'>

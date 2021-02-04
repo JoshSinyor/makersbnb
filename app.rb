@@ -28,6 +28,7 @@ class MakersBNBapp < Sinatra::Base
     if session[:session_user]
       erb :new_space
     else
+      flash[:not_signed_in] = "You must be signed in to add a space."
       redirect '/sign_in'
     end
   end
@@ -74,6 +75,7 @@ class MakersBNBapp < Sinatra::Base
       session[:session_user] = user
       redirect '/'
     else
+      flash[:email_in_use] = "This email has already been registered."
       redirect '/register'
     end
   end
@@ -84,10 +86,11 @@ class MakersBNBapp < Sinatra::Base
 
   post '/sign_in' do
     user = User.where(user_email: params['user_email'].downcase).first
-    if user.authenticate(params['password'])
+    if !user.nil? && user.authenticate(params['password'])
       session[:session_user] = user
       redirect '/'
     else
+      flash[:invalid_credentials] = "Invalid email/password combination"
       redirect '/sign_in'
     end
   end
