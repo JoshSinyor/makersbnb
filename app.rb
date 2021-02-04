@@ -4,6 +4,7 @@ require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'sinatra/activerecord'
+require "sinatra/flash"
 require 'bcrypt'
 require './lib/space'
 require './lib/user'
@@ -12,6 +13,7 @@ require './lib/user'
 class MakersBNBapp < Sinatra::Base
   enable :sessions
   register Sinatra::ActiveRecordExtension
+  register Sinatra::Flash
   configure :development do
     register Sinatra::Reloader
   end
