@@ -194,3 +194,29 @@ Creating these follows the TDD process:
 4. Composition of code.
 5. Running of feature and unit tests.
 6. Refactoring, and if necessary correction of code.
+
+---
+
+List for Hamish:
+
+1. [Issue #30](https://github.com/JoshSinyor/makersbnb/issues/30) raised for Nice to Haves
+2. Feature test for signing in
+3. Signing in button for index.erb
+4. POST/GET cycle for signing in
+5. Set up authentication for signing in, saving user into session
+6. Added welcome message for user on the index page (welcome big H!)
+7. Feature test for logging out
+8. Sign out button on index page
+9. Signed out user no longer sees welcome message
+10. Added feature test for 'add new space button'
+11. Moved add new space form to a new page, only accessible by signed in users
+12. Created web helper for signing in new users
+13. Refactored web_helper fill_in_space_form. Removed 'visit /'
+14. Added 'direct_add_space_to_db' method in web helpers
+15. Refactored tests to use 'before'
+
+Plan for Thursday:
+* add new space only available to signed in users
+* link user with added space
+* booking form on description page
+* taskbar please? 
