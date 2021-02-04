@@ -3,6 +3,8 @@
 feature 'New Space' do
   before do
     visit '/'
+    register_new_user(DEFAULT_USER_NAME, DEFAULT_EMAIL, DEFAULT_USER_PASSWORD)
+    sign_in
     click_button 'add_space'
     fill_in_space_form(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE, DEFAULT_EMAIL)
   end
@@ -22,5 +24,14 @@ feature 'New Space' do
     click_button 'Submit'
 
     expect(page).to have_content 'This space is available from 02/01/21 to 05/07/21. Book now!'
+  end
+
+  scenario 'space is linked to owner user' do
+    fill_in_space_form(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE, DEFAULT_EMAIL)
+    click_button 'Submit'
+
+    space = Space.all[0]
+    user = User.all[0]
+    expect(user.id).to eq space.user_id
   end
 end

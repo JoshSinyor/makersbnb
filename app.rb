@@ -32,7 +32,8 @@ class MakersBNBapp < Sinatra::Base
                       price: params['price'],
                       email: params['email'],
                       start_date: params['start_date'],
-                      end_date: params['end_date'])
+                      end_date: params['end_date'],
+                    user_id: session[:session_user].id)
     space.save
     redirect '/'
   end

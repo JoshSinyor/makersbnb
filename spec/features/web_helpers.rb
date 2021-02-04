@@ -6,7 +6,7 @@ DEFAULT_SPACE_PRICE = '5.20'
 DEFAULT_EMAIL = 'test@test.com'
 
 DEFAULT_USER_NAME = 'John Wayne'
-DEFAULT_USER_EMAIL = 'john@wildwest.com'
+DEFAULT_USER_EMAIL = 'test@test.com'
 DEFAULT_USER_PASSWORD = 'goodbadugly'
 
 def fill_in_space_form(space_name, space_description, space_price, space_email)
