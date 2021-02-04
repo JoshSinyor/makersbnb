@@ -3,10 +3,10 @@
 feature 'New Space' do
   before do
     visit '/'
-    register_new_user(DEFAULT_USER_NAME, DEFAULT_EMAIL, DEFAULT_USER_PASSWORD)
+    register_new_user
     click_on 'Add Your Space'
 
-    fill_in_space_form(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE)
+    fill_in_space_form
   end
   # RSpec feature tests do not currently respect 'required' fields.
   scenario 'user adds listing' do
@@ -26,7 +26,7 @@ feature 'New Space' do
   end
 
   scenario 'space is linked to owner user' do
-    fill_in_space_form(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE, DEFAULT_EMAIL)
+    fill_in_space_form
     click_button 'Submit'
 
     space = Space.all[0]

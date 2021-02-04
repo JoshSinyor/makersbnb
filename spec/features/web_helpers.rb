@@ -18,7 +18,9 @@ SECOND_USER_EMAIL = "clint@eastwood.com"
 SECOND_USER_PASSWORD = "mysteryman"
 
 
-def fill_in_space_form(space_name, space_description, space_price,
+def fill_in_space_form(space_name = DEFAULT_SPACE_NAME,
+                      space_description = DEFAULT_SPACE_DESCRIPTION,
+                      space_price = DEFAULT_SPACE_PRICE,
                       start_date = DEFAULT_START_DATE,
                       end_date = DEFAULT_END_DATE)
   fill_in :space_name, with: space_name
@@ -28,7 +30,9 @@ def fill_in_space_form(space_name, space_description, space_price,
   fill_in :end_date, with: end_date
 end
 
-def direct_add_space_to_db(space_name, space_description, space_price)
+def direct_add_space_to_db(space_name = DEFAULT_SPACE_NAME,
+                           space_description = DEFAULT_SPACE_DESCRIPTION,
+                           space_price = DEFAULT_SPACE_PRICE)
   space = Space.new(space_name: space_name,
                     description: space_description,
                     price: space_price)
@@ -36,7 +40,7 @@ def direct_add_space_to_db(space_name, space_description, space_price)
   space
 end
 
-def register_new_user(user_name, user_email, user_password)
+def register_new_user(user_name = DEFAULT_USER_NAME, user_email = DEFAULT_USER_EMAIL, user_password = DEFAULT_USER_PASSWORD)
   visit '/'
   click_on 'Register'
   fill_in :user_name, with: user_name

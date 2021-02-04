@@ -7,7 +7,7 @@ feature 'Homepage' do
   end
 
   scenario 'page displays multiple listings' do
-    direct_add_space_to_db(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE)
+    direct_add_space_to_db
     direct_add_space_to_db('Windsor Castle', 'Bring back the guillotine.', '6.25')
     visit '/'
 
@@ -16,8 +16,7 @@ feature 'Homepage' do
   end
 
   scenario "enter space form is now on a separate page" do
-    # visit "/"
-    register_new_user(DEFAULT_USER_NAME, DEFAULT_USER_EMAIL, DEFAULT_USER_PASSWORD)
+    register_new_user
     click_on "Add Your Space"
 
     expect(current_path).to eq "/new_space"
