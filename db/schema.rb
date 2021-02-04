@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_02_04_103448) do
 
   # These are extensions that must be enabled in order to support this database
@@ -27,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_02_04_103448) do
 
   create_table "users", force: :cascade do |t|
     t.string "user_name", limit: 50
-    t.string "user_email", limit: 50
+    t.string "user_email"
     t.string "password_digest"
   end
 

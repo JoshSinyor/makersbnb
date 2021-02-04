@@ -18,7 +18,7 @@ class MakersBNBapp < Sinatra::Base
 
   get '/' do
     @spaces = Space.all
-    @welcome = session[:session_user] ? "Welcome Big #{session[:session_user].user_name[0]}!" : 'Real gangstas make an account!'
+    @login_status = session[:session_user]
     erb :index
   end
 
@@ -62,10 +62,13 @@ class MakersBNBapp < Sinatra::Base
   post '/new_user' do
     encrypted_password = BCrypt::Password.create(params[:password])
     user = User.new(user_name: params['user_name'],
-                    user_email: params['user_email'],
+                    user_email: params['user_email'].downcase,
                     password_digest: encrypted_password)
-    user.save
-    redirect '/'
+    if user.save
+      redirect '/'
+    else
+      redirect '/register'
+    end
   end
 
   get '/sign_in' do
@@ -73,12 +76,12 @@ class MakersBNBapp < Sinatra::Base
   end
 
   post '/sign_in' do
-    user = User.where(user_email: params['user_email']).first
+    user = User.where(user_email: params['user_email'].downcase).first
     if user.authenticate(params['password'])
       session[:session_user] = user
       redirect '/'
     else
-      redirect '/sign_in'
+      redirect '/register'
     end
   end
 

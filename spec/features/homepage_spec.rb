@@ -18,8 +18,8 @@ feature 'Homepage' do
   scenario "enter space form is now on a separate page" do
     # visit "/"
     register_new_user(DEFAULT_USER_NAME, DEFAULT_USER_EMAIL, DEFAULT_USER_PASSWORD)
-    sign_in
-    click_button "Add your space"
+    sign_in(DEFAULT_USER_EMAIL, DEFAULT_USER_PASSWORD)
+    click_on "Add Your Space"
 
     expect(current_path).to eq "/new_space"
   end
