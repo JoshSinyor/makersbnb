@@ -19,7 +19,7 @@ feature 'Homepage' do
     # visit "/"
     register_new_user(DEFAULT_USER_NAME, DEFAULT_USER_EMAIL, DEFAULT_USER_PASSWORD)
     sign_in(DEFAULT_USER_EMAIL, DEFAULT_USER_PASSWORD)
-    click_button "Add your space"
+    click_on "Add Your Space"
 
     expect(current_path).to eq "/new_space"
   end

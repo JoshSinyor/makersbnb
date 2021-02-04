@@ -1,33 +1,17 @@
 <div class="topnav">
   <a class="active" name="home_button" href="/">Home</a>
-  <a name="sign_in_button" href="/sign_in"><%= @login_status ? "Sign Out" | "Sign In " %></a>
-  <a name="register_button" href="/register">Register</a>
+  <% if !@login_status %>
+    <a name="sign_in_button" href="/sign_in">Sign In</a>
+    <a name="register_button" href="/register">Register</a>
+  <%else%>
+    <a name="sign_out_button" href="/sign_out">Sign Out</a>
+  <%end%>
+  <a name="add_space" href="/new_space">Add Your Space</a>
 </div>
 
 <h1>Makers BnB</h1>
 <h3><%= @welcome %></h3>
 
-<div>
-  <form action="/register" method="get">
-    <button type="submit" name="register">Register</button>
-  </form>
-</div>
-<div>
-  <form action="/sign_in" method="get">
-    <button type="submit" name="sign_in">Sign In</button>
-  </form>
-</div>
-<div>
-  <form action="/sign_out" method="get">
-    <button type="submit" name="sign_out">Sign Out</button>
-  </form>
-</div>
-<div>
-  <form action="/new_space" method="get">
-    <button type="submit" name="add_space">Add your space</button>
-  </form>
-</div>
-<br/>
 <br/>
 
 <div>

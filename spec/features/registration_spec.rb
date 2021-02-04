@@ -3,7 +3,7 @@
 feature 'User Registration' do
   scenario 'user registers' do
     visit '/'
-    click_button 'register'
+    click_on 'Register'
     fill_in :user_name, with: DEFAULT_USER_NAME
     fill_in :user_email, with: DEFAULT_USER_EMAIL
     fill_in :password, with: DEFAULT_USER_PASSWORD
