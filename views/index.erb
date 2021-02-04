@@ -10,7 +10,7 @@
 </div>
 
 <h1>Makers BnB</h1>
-<h3><%= @welcome %></h3>
+<h3><%= @login_status ? "Welcome Big #{session[:session_user].user_name[0]}!" : 'Real gangstas make an account!'%></h3>
 
 <br/>
 
