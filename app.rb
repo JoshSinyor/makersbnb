@@ -23,7 +23,11 @@ class MakersBNBapp < Sinatra::Base
   end
 
   get '/new_space' do
-    erb :new_space
+    if session[:session_user]
+      erb :new_space
+    else
+      redirect '/sign_in'
+    end
   end
 
   post '/new_space' do
