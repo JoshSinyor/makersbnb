@@ -18,11 +18,16 @@ class MakersBNBapp < Sinatra::Base
 
   get '/' do
     @spaces = Space.all
+    @welcome = session[:session_user] ? "Welcome Big #{session[:session_user].user_name[0]}!" : 'Real gangstas make an account!'
     erb :index
   end
 
+  get '/new_space' do
+    erb :new_space
+  end
+
   post '/new_space' do
-    space = Space.new(space_name: params['name'],
+    space = Space.new(space_name: params['space_name'],
                       description: params['description'],
                       price: params['price'],
                       email: params['email'],
@@ -47,6 +52,25 @@ class MakersBNBapp < Sinatra::Base
                     user_email: params['user_email'],
                     password_digest: encrypted_password)
     user.save
+    redirect '/'
+  end
+
+  get '/sign_in' do
+    erb :sign_in
+  end
+
+  post '/sign_in' do
+    user = User.where(user_email: params['user_email']).first
+    if user.authenticate(params['password'])
+      session[:session_user] = user
+      redirect '/'
+    else
+      redirect '/sign_in'
+    end
+  end
+
+  get '/sign_out' do
+    session[:session_user] = nil
     redirect '/'
   end
 end

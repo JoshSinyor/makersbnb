@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
-feature 'starting session' do
-  scenario 'welcomed by name after session start' do
-    visit '/'
+feature 'Signing out' do
+  scenario 'a user signs in then out' do
     register_new_user(DEFAULT_USER_NAME, DEFAULT_USER_EMAIL, DEFAULT_USER_PASSWORD)
 
     click_button 'Sign In'
@@ -11,7 +8,8 @@ feature 'starting session' do
     fill_in :password, with: DEFAULT_USER_PASSWORD
     click_button 'Sign In'
 
-    expect(current_path).to eq '/'
-    expect(page).to have_content "Welcome Big #{DEFAULT_USER_NAME[0]}!"
+    click_button 'Sign Out'
+    expect(page.status_code).to eq 200
+    expect(page).not_to have_content "Welcome Big #{DEFAULT_USER_NAME[0]}!"
   end
 end
