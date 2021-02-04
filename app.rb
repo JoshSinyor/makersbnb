@@ -89,4 +89,14 @@ class MakersBNBapp < Sinatra::Base
     session[:session_user] = nil
     redirect '/'
   end
+
+  get "/my_spaces" do
+    p "here in get /my_spaces"
+    p session[:session_user]
+    p session[:session_user].id
+    @spaces = Space.where(user_id: session[:session_user].id)
+    p @spaces
+    erb :my_spaces
+  end
+
 end
