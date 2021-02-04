@@ -51,8 +51,11 @@ class MakersBNBapp < Sinatra::Base
     user = User.new(user_name: params['user_name'],
                     user_email: params['user_email'].downcase,
                     password_digest: encrypted_password)
-    user.save
-    redirect '/'
+    if user.save
+      redirect '/'
+    else
+      redirect '/register'
+    end
   end
 
   get '/sign_in' do
@@ -65,7 +68,7 @@ class MakersBNBapp < Sinatra::Base
       session[:session_user] = user
       redirect '/'
     else
-      redirect '/sign_in'
+      redirect '/register'
     end
   end
 
