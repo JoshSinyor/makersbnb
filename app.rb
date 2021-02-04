@@ -39,8 +39,20 @@ class MakersBNBapp < Sinatra::Base
   end
 
   get '/listing-:id' do
+    @booking = session[:booking_requested]
+    if params[:id] == ":id"
+      params[:id] = session[:listing_id]
+    end
+
     @space = Space.where(id: params[:id])[0]
+    @owner = User.find(@space.user_id)
     erb :listing
+  end
+
+  post '/listing-:id' do
+    session[:booking_requested] = true
+    session[:listing_id] = params[:id]
+    redirect '/listing-:id'
   end
 
   get '/register' do
