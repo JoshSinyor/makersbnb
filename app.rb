@@ -18,6 +18,7 @@ class MakersBNBapp < Sinatra::Base
 
   get '/' do
     @spaces = Space.all
+    @login_status = session[:session_user]
     @welcome = session[:session_user] ? "Welcome Big #{session[:session_user].user_name[0]}!" : 'Real gangstas make an account!'
     erb :index
   end

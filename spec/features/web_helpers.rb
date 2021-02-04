@@ -34,9 +34,9 @@ def register_new_user(user_name, user_email, user_password)
   click_button 'Save'
 end
 
-def sign_in
+def sign_in(user_email, user_password)
   click_button 'Sign In'
-  fill_in :user_email, with: DEFAULT_USER_EMAIL
-  fill_in :password, with: DEFAULT_USER_PASSWORD
+  fill_in :user_email, with: user_email
+  fill_in :password, with: user_password
   click_button 'Sign In'
 end
