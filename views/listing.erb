@@ -1,3 +1,14 @@
+<div class="topnav">
+  <a name="home_button" href="/">Home</a>
+  <% if !@login_status %>
+    <a name="sign_in_button" href="/sign_in">Sign In</a>
+    <a name="register_button" href="/register">Register</a>
+  <%else%>
+    <a name="sign_out_button" href="/sign_out">Sign Out</a>
+  <%end%>
+  <a name="add_space" href="/new_space">Add Your Space</a>
+</div>
+
 <div style="border: 2px solid darkgreen" id="listing-<%= @space[:id] %>">
   <%= @space[:space_name]%><br/>
   <%= @space[:description] %><br/>
