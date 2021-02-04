@@ -7,8 +7,8 @@ feature 'Homepage' do
   end
 
   scenario 'page displays multiple listings' do
-    direct_add_space_to_db(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE, DEFAULT_EMAIL)
-    direct_add_space_to_db('Windsor Castle', 'Bring back the guillotine.', '6.25', 'liz@saxe-coburgs.de')
+    direct_add_space_to_db(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE)
+    direct_add_space_to_db('Windsor Castle', 'Bring back the guillotine.', '6.25')
     visit '/'
 
     expect(page).to have_content DEFAULT_SPACE_NAME

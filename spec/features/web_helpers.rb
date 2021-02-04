@@ -18,22 +18,20 @@ SECOND_USER_EMAIL = "clint@eastwood.com"
 SECOND_USER_PASSWORD = "mysteryman"
 
 
-def fill_in_space_form(space_name, space_description, space_price, space_email,
+def fill_in_space_form(space_name, space_description, space_price,
                       start_date = DEFAULT_START_DATE,
                       end_date = DEFAULT_END_DATE)
   fill_in :space_name, with: space_name
   fill_in :description, with: space_description
   fill_in :price, with: space_price
-  fill_in :email, with: space_email
   fill_in :start_date, with: start_date
   fill_in :end_date, with: end_date
 end
 
-def direct_add_space_to_db(space_name, space_description, space_price, space_email)
+def direct_add_space_to_db(space_name, space_description, space_price)
   space = Space.new(space_name: space_name,
                     description: space_description,
-                    price: space_price,
-                    email: space_email)
+                    price: space_price)
   space.save
   space
 end
