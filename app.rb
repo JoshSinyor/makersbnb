@@ -81,7 +81,7 @@ class MakersBNBapp < Sinatra::Base
       session[:session_user] = user
       redirect '/'
     else
-      redirect '/register'
+      redirect '/sign-in'
     end
   end
 
