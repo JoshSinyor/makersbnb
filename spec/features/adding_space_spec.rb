@@ -6,7 +6,7 @@ feature 'New Space' do
     register_new_user(DEFAULT_USER_NAME, DEFAULT_EMAIL, DEFAULT_USER_PASSWORD)
     click_on 'Add Your Space'
 
-    fill_in_space_form(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE, DEFAULT_EMAIL)
+    fill_in_space_form(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE)
   end
   # RSpec feature tests do not currently respect 'required' fields.
   scenario 'user adds listing' do
@@ -15,7 +15,6 @@ feature 'New Space' do
     expect(page).to have_content DEFAULT_SPACE_NAME
     expect(page).to have_content DEFAULT_SPACE_DESCRIPTION
     expect(page).to have_content DEFAULT_SPACE_PRICE
-    expect(page).to have_content DEFAULT_EMAIL
   end
 
   scenario 'user can specify available dates' do

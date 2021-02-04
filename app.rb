@@ -36,7 +36,6 @@ class MakersBNBapp < Sinatra::Base
     space = Space.new(space_name: params['space_name'],
                       description: params['description'],
                       price: params['price'],
-                      email: params['email'],
                       start_date: params['start_date'],
                       end_date: params['end_date'],
                     user_id: session[:session_user].id)
