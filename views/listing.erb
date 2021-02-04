@@ -9,6 +9,7 @@
   <a name="add_space" href="/new_space">Add Your Space</a>
 </div>
 
+
 <div style="border: 2px solid darkgreen" id="listing-<%= @space[:id] %>">
   <%= @space[:space_name]%><br/>
   <%= @space[:description] %><br/>
@@ -20,7 +21,7 @@
   <form action='/listing-<%= @space[:id] %>' method="post">
     <label for :date>What night would you like to stay?</label>
     <input type="text" name="date" placeholder="DD/MM/YY"/>
-    <input type="submit" name="Request Booking">Request Booking</input>
+    <input type="submit" name="Request Booking" value="Request Booking">
   </form>
 </div>
 
