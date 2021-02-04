@@ -3,9 +3,10 @@
   <% if !@login_status %>
     <a name="sign_in_button" href="/sign_in">Sign In</a>
     <a name="register_button" href="/register">Register</a>
-  <%else%>
+  <% else %>
     <a name="sign_out_button" href="/sign_out">Sign Out</a>
-  <%end%>
+    <a name="my_spaces_button" href="/my_spaces">My Spaces</a>
+  <% end %>
   <a name="add_space" href="/new_space">Add Your Space</a>
 </div>
 

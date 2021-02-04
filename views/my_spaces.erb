@@ -1,0 +1,23 @@
+<div class="topnav">
+  <a name="home_button" href="/">Home</a>
+  <a name="sign_out_button" href="/sign_out">Sign Out</a>
+  <a class="active" name="my_spaces_button" href="/my_spaces">My Spaces</a>
+  <a name="add_space" href="/new_space">Add Your Space</a>
+</div>
+
+<div>
+  <h3>Your spaces</h3>
+  <% if @spaces %>
+    <% @spaces.each do |space| %>
+      <a href="listing-<%= space[:id] %>" style="text-decoration: none">
+        <div style="border: 2px solid darkgreen" id="listing-<%= space[:id] %>">
+          <%= space[:space_name]%><br/>
+          <%= '£%.2f' % space[:price] %>/night<br/>
+          Available from <%= space[:start_date] %> to <%= space[:end_date] %>.<br/>
+        </div>
+      </a>
+    <% end %>
+    <% else %>
+      You don't have any spaces listed yet.
+  <% end %>
+</div>
