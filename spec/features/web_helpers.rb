@@ -56,5 +56,5 @@ def sign_in(user_email = DEFAULT_USER_EMAIL, user_password = DEFAULT_USER_PASSWO
 end
 
 def sign_out
-  click_button "Sign Out"
+  click_on "Sign Out"
 end

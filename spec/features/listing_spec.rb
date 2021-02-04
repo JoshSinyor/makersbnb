@@ -1,19 +1,16 @@
 # frozen_string_literal: true
 
 feature 'Listing' do
-  scenario 'listing has a page' do
-    space = direct_add_space_to_db(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE, DEFAULT_EMAIL)
-    visit('/')
-    click_on DEFAULT_SPACE_NAME # We would rather reference this by id
-
-    expect(current_path).to eq "/listing-#{space.id}"
-    expect(page.status_code).to eq 200 # Is this necessary when the path will be 404 if it doesn't equal 200?
+  before do
+    visit '/'
+    register_new_user(DEFAULT_USER_NAME, DEFAULT_USER_EMAIL, DEFAULT_USER_PASSWORD)
+    sign_in
+    click_on 'Add Your Space'
+    fill_in_space_form(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE, DEFAULT_EMAIL, DEFAULT_START_DATE, DEFAULT_END_DATE)
+    click_button 'Submit'
   end
 
   scenario 'listings page has listing content' do
-    direct_add_space_to_db(DEFAULT_SPACE_NAME, DEFAULT_SPACE_DESCRIPTION, DEFAULT_SPACE_PRICE, DEFAULT_EMAIL)
-    # The variable 'space' does not need to be assigned unless we are referencing by id
-    visit('/')
     click_on DEFAULT_SPACE_NAME # We would rather reference this by id
 
     expect(page).to have_content DEFAULT_SPACE_NAME
