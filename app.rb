@@ -65,6 +65,7 @@ class MakersBNBapp < Sinatra::Base
                     user_email: params['user_email'].downcase,
                     password_digest: encrypted_password)
     if user.save
+      session[:session_user] = user
       redirect '/'
     else
       redirect '/register'
