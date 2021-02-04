@@ -100,6 +100,7 @@ class MakersBNBapp < Sinatra::Base
 
   get "/my_spaces" do
     @spaces = Space.where(user_id: session[:session_user].id)
+    p @spaces
     erb :my_spaces
   end
 
