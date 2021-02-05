@@ -36,9 +36,7 @@ class MakersBNBapp < Sinatra::Base
   end
 
   post '/new_space' do
-    start_date = Date.strptime(params[:start_date], "%d/%m/%y")
-    end_date = Date.strptime(params[:end_date], "%d/%m/%y")
-    if (end_date - start_date).to_i < 1
+    if Booking.valid_date_range(params[:start_date], params[:end_date]) == false
       flash[:bad_end_date] = "End date must be after start date!"
       redirect "/new_space"  
     end
