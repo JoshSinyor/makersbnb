@@ -1,0 +1,28 @@
+<div class="topnav">
+  <a name="home_button" href="/">Home</a>
+  <a name="sign_out_button" href="/sign_out">Sign Out</a>
+  <a name="my_spaces_button" href="/my_spaces">My Spaces</a>
+  <a class="active" name="my_requests_button" href="/my_requests">My Requests</a>
+  <a name="add_space" href="/new_space">Add Your Space</a>
+</div>
+
+
+<div>
+  <h3>Your requests</h3>
+  <% if @requests[0] == nil %>
+    You don't have any requests.
+  <% elsif @requests %>
+    <% @requests.each do |request| %>
+        Request id:<%= request.id %>
+        Request Status:
+        <% if request.accepted == nil %>
+          Pending
+        <% elsif request.accepted == true %>
+          Accepted
+        <% else %>
+          Declined
+        <% end %>
+        <br>
+    <% end %>
+  <% end %>
+</div>
