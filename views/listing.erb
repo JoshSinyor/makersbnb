@@ -24,8 +24,8 @@
   <% else %>
     <div>
       <% if @login.id == @space.user_id %>
-        <% if @bookings.accepted.nil? %>
-          Booking requested.
+        <% if !@bookings.empty? %>
+          Booking requested for the night of <%= @bookings[0].start_date %>.
         <% else %>
           No requests for this space yet
         <% end %>

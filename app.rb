@@ -67,7 +67,9 @@ class MakersBNBapp < Sinatra::Base
 
     @space = Space.where(id: params[:id])[0]
     @owner = User.find(@space.user_id)
-    @bookings = Booking.where(space_id: @space.id)[0]
+    @bookings = Booking.where(space_id: @space.id)
+    p @bookings
+    p @bookings[0]
     erb :listing
   end
 
@@ -118,6 +120,7 @@ class MakersBNBapp < Sinatra::Base
 
   get '/sign_out' do
     session[:session_user] = nil
+    session[:booking_requested] = nil
     redirect '/'
   end
 
