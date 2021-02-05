@@ -52,10 +52,10 @@ class MakersBNBapp < Sinatra::Base
     if params[:id] == ":id"
       params[:id] = session[:listing_id]
     end
-
+    
     @space = Space.where(id: params[:id])[0]
     @owner = User.find(@space.user_id)
-    @bookings = Booking.where()
+    @bookings = Booking.where(space_id: params[:id])
     erb :listing
   end
 

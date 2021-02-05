@@ -20,7 +20,7 @@
 
 <div>
   <% if @login.id == @space.user_id %>
-    <%
+    <%= @bookings %>
   <% else %>
   <div>
     <form action='/listing-<%= @space[:id] %>' method="post">
