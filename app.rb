@@ -142,4 +142,9 @@ class MakersBNBapp < Sinatra::Base
     redirect "/listing-#{params[:space_id]}"
   end
 
+  get '/my_requests' do
+    @requests = Booking.where(user_id: session[:session_user].id)
+    erb :my_requests
+  end
+
 end
