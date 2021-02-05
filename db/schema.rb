@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_02_04_160519) do
     t.string "password_digest"
   end
 
-  add_foreign_key "bookings", "spaces"
-  add_foreign_key "bookings", "users"
-  add_foreign_key "spaces", "users"
+  add_foreign_key "bookings", "spaces", on_delete: :cascade
+  add_foreign_key "bookings", "users", on_delete: :cascade
+  add_foreign_key "spaces", "users", on_delete: :cascade
 end
