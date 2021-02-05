@@ -68,8 +68,6 @@ class MakersBNBapp < Sinatra::Base
     @space = Space.where(id: params[:id])[0]
     @owner = User.find(@space.user_id)
     @bookings = Booking.where(space_id: @space.id)
-    p @bookings
-    p @bookings[0]
     erb :listing
   end
 
@@ -80,17 +78,12 @@ class MakersBNBapp < Sinatra::Base
     start_date = Date.strptime(Space.find(params[:id]).start_date, "%d/%m/%y")
     end_date = Date.strptime(Space.find(params[:id]).end_date, "%d/%m/%y")
     booking_date = Date.strptime(params[:date], "%d/%m/%y")
-    p "HERE in LISTING ID!! \n\n\n"
-    p start_date
-    p end_date
-    p booking_date
-    p (start_date..end_date).include?(booking_date)
 
     if (start_date..end_date).include?(booking_date) == false
       flash[:booking_out_of_range] = "This space is not available on that date."
       redirect '/listing-:id'
     end
-    
+
 
     booking = Booking.new(start_date: params['date'],
                           space_id: session[:space_id],
