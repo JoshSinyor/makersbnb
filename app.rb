@@ -129,10 +129,9 @@ class MakersBNBapp < Sinatra::Base
     erb :my_spaces
   end
 
-  post '/response-:return' do
-    p params[:return]
+  post '/response-:return-:space_id' do
     Booking.where(id: session[:booking_id]).update_all(accepted: params[:return])
-    redirect '/'
+    redirect "/listing-#{params[:space_id]}"
   end
 
 end
