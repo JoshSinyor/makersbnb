@@ -22,8 +22,8 @@ require './lib/booking'
 
   encrypted_password = BCrypt::Password.create(@password)
   user = User.new(user_name: @user_name,
-                    user_email: @email,
-                    password_digest: encrypted_password,
-                    pfp_url: @pfp_url)
+                  user_email: @email,
+                  password_digest: encrypted_password,
+                  pfp_url: @pfp_url)
   user.save
 end
