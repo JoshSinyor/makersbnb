@@ -25,17 +25,21 @@
     <div>
       <% if @login.id == @space.user_id %>
         <% if !@bookings.empty? %>
-          <div>
-            Booking requested for the night of <%= @bookings[0].start_date %>.
-            <form action='/response-<%=true%>-<%=@space.id%>' method='post' >
-              <% session[:booking_id] = @bookings[0].id %>
-              <input type='submit' value='Accept'>
-            </form>
-            <form action='/response-<%=false%>-<%=@space.id%>' method='post' >
-              <% session[:booking_id] = @bookings[0].id %>
-              <input type='submit' value='Decline'>
-            </form>
-          </div>
+          <% if @bookings[0].accepted != nil%>
+            You have <%= @bookings[0].accepted ? 'accepted' : ' declined' %> <%= @bookings[0].start_date %>.
+          <%else%>
+            <div>
+              Booking requested for the night of <%= @bookings[0].start_date %>.
+              <form action='/response-<%=true%>-<%=@space.id%>' method='post' >
+                <% session[:booking_id] = @bookings[0].id %>
+                <input type='submit' value='Accept'>
+              </form>
+              <form action='/response-<%=false%>-<%=@space.id%>' method='post' >
+                <% session[:booking_id] = @bookings[0].id %>
+                <input type='submit' value='Decline'>
+              </form>
+            </div>
+          <%end%>
         <% else %>
           No requests for this space yet
         <% end %>
