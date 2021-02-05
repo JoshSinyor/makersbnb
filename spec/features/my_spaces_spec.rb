@@ -15,19 +15,19 @@ feature "my spaces page" do
     expect(page).to have_content DEFAULT_SPACE_NAME
   end
 
-  scenario "user can see if their space has been requested" do
-    sign_out
-
-    register_new_user(SECOND_USER_NAME, SECOND_USER_EMAIL, SECOND_USER_PASSWORD)
-    click_on DEFAULT_SPACE_NAME
-    fill_in "date", with: DEFAULT_BOOKING_DATE
-    click_button "Request Booking"
-    sign_out
-
-    sign_in
-    click_on "My Spaces"
-    expect(page).to have_content("This space has been requested.")
-  end
+  # scenario "user can see if their space has been requested" do
+  #   sign_out
+  #
+  #   register_new_user(SECOND_USER_NAME, SECOND_USER_EMAIL, SECOND_USER_PASSWORD)
+  #   click_on DEFAULT_SPACE_NAME
+  #   fill_in "date", with: DEFAULT_BOOKING_DATE
+  #   click_button "Request Booking"
+  #   sign_out
+  #
+  #   sign_in
+  #   click_on "My Spaces"
+  #   expect(page).to have_content("This space has been requested.")
+  # end
 
 # One place we should see if space is requested
 
