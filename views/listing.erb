@@ -25,7 +25,17 @@
     <div>
       <% if @login.id == @space.user_id %>
         <% if !@bookings.empty? %>
-          Booking requested for the night of <%= @bookings[0].start_date %>.
+          <div>
+            Booking requested for the night of <%= @bookings[0].start_date %>.
+            <form action='/response-accept' method='post' >
+              <% session[:booking_id] = @bookings[0].id %>
+              <input type='submit' value='Accept'>
+            </form>
+            <form action='/response-denied' method='post' >
+              <% session[:booking_id] = @bookings[0].id %>
+              <input type='submit' value='Decline'>
+            </form>
+          </div>
         <% else %>
           No requests for this space yet
         <% end %>
