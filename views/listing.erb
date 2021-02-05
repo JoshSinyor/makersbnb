@@ -27,11 +27,11 @@
         <% if !@bookings.empty? %>
           <div>
             Booking requested for the night of <%= @bookings[0].start_date %>.
-            <form action='/response-accept' method='post' >
+            <form action='/response-<%=true%>' method='post' >
               <% session[:booking_id] = @bookings[0].id %>
               <input type='submit' value='Accept'>
             </form>
-            <form action='/response-denied' method='post' >
+            <form action='/response-<%=false%>' method='post' >
               <% session[:booking_id] = @bookings[0].id %>
               <input type='submit' value='Decline'>
             </form>

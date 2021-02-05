@@ -129,13 +129,9 @@ class MakersBNBapp < Sinatra::Base
     erb :my_spaces
   end
 
-  post '/response-accept' do
-    Booking.where(id: session[:booking_id]).update_all(accepted: true)
-    redirect '/'
-  end
-
-  post '/response-denied' do
-    Booking.where(id: session[:booking_id]).update_all(accepted: false)
+  post '/response-:return' do
+    p params[:return]
+    Booking.where(id: session[:booking_id]).update_all(accepted: params[:return])
     redirect '/'
   end
 
