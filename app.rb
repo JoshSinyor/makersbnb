@@ -67,7 +67,9 @@ class MakersBNBapp < Sinatra::Base
 
     @space = Space.where(id: params[:id])[0]
     @owner = User.find(@space.user_id)
-    @bookings = Booking.where(space_id: @space.id)[0]
+    @bookings = Booking.where(space_id: @space.id)
+    p @bookings
+    p @bookings[0]
     erb :listing
   end
 
@@ -133,12 +135,18 @@ class MakersBNBapp < Sinatra::Base
 
   get '/sign_out' do
     session[:session_user] = nil
+    session[:booking_requested] = nil
     redirect '/'
   end
 
   get "/my_spaces" do
     @spaces = Space.where(user_id: session[:session_user].id)
     erb :my_spaces
+  end
+
+  post '/response-:return-:space_id' do
+    Booking.where(id: session[:booking_id]).update_all(accepted: params[:return])
+    redirect "/listing-#{params[:space_id]}"
   end
 
 end
