@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'date'
 
 require 'sinatra'
 require 'sinatra/base'
@@ -35,6 +36,13 @@ class MakersBNBapp < Sinatra::Base
   end
 
   post '/new_space' do
+    start_date = Date.strptime(params[:start_date], "%d/%m/%y")
+    end_date = Date.strptime(params[:end_date], "%d/%m/%y")
+    if (end_date - start_date).to_i < 1
+      flash[:bad_end_date] = "End date must be after start date!"
+      redirect "/new_space"  
+    end
+
     # saving the image file
     if params[:image_file]
       filename = params[:image_file][:filename]
@@ -74,6 +82,7 @@ class MakersBNBapp < Sinatra::Base
   post '/listing-:id' do
     session[:booking_requested] = true
     session[:listing_id] = params[:id]
+
 
     booking = Booking.new(start_date: params['date'],
                           space_id: session[:space_id],
