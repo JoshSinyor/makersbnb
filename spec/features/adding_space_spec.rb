@@ -32,11 +32,11 @@ feature 'New Space' do
   end
 
   scenario 'owner user uploads an image' do
-    click_button 'Upload Image'
-    attach_file('ok', File.absolute_path('./public/default_space_image.png'))
+    # click_button 'Upload Image'
+    attach_file('image_file', 'public/default_space_image.png')
     click_button 'Submit'
 
     visit '/'
-    expect(page).find have_content('default_space_image.png')
+    expect(page).to have_content('default_space_image.png')
   end
 end

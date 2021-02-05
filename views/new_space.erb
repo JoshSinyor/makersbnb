@@ -7,7 +7,7 @@
 
 <div>
   <h3>Add your property to Makers BNB</h3>
-  <form action="/new_space" method='post'>
+  <form action="/new_space" method='post' enctype='multipart/form-data'>
     <label for="space_name">Your space name:</label><br>
     <input type="text" name="space_name" required='required'><br>
 
@@ -23,9 +23,9 @@
     <label for="end_date">End date:</label><br/>
     <input type="text" name="end_date" placeholder="dd/mm/yy"><br/>
 
-    <label for='image_file'>Photograph:</label>
-    <input type='file' name='image_file' />
+    <label for='image_file'>Photograph:</label><br/>
+    <input type='file' name='image_file'/>
 
-    <input type="submit" name="Submit">
+    <input type="submit" name="Submit" value="Submit">
   </form>
 </div>

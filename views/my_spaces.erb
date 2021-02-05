@@ -14,6 +14,7 @@
       <a href="listing-<%= space[:id] %>" style="text-decoration: none">
         <div style="border: 2px solid darkgreen" id="listing-<%= space[:id] %>">
           <%= space[:space_name]%><br/>
+          <img src="uploads/<%= space[:image_name] %>"/><br/>
           <%= '£%.2f' % space[:price] %>/night<br/>
           Available from <%= space[:start_date] %> to <%= space[:end_date] %>.<br/>
         </div>
