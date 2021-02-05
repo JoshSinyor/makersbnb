@@ -126,4 +126,9 @@ class MakersBNBapp < Sinatra::Base
     erb :my_spaces
   end
 
+  get '/my_requests' do
+    @requests = Booking.where(user_id: session[:session_user].id)
+    erb :my_requests
+  end
+
 end
