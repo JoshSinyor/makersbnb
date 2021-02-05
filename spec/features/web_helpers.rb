@@ -28,6 +28,7 @@ def fill_in_space_form(space_name = DEFAULT_SPACE_NAME,
   fill_in :price, with: space_price
   fill_in :start_date, with: start_date
   fill_in :end_date, with: end_date
+  attach_file('image_file', 'public/default_space_image.png')
 end
 
 def direct_add_space_to_db(space_name = DEFAULT_SPACE_NAME,

@@ -24,8 +24,25 @@
   <% else %>
     <div>
       <% if @login.id == @space.user_id %>
-        <% if @bookings.accepted.nil? %>
-          Booking requested.
+        <% if !@bookings.empty? %>
+          <% @bookings.each do |booking| %>
+            <% if booking.accepted != nil%>
+              You have <%= booking.accepted ? 'accepted' : ' declined' %> <%= booking.start_date %>.
+              <br>
+            <%else%>
+              <div>
+                Booking requested for the night of <%= booking.start_date %>.
+                <form action='/response-<%=true%>-<%=@space.id%>' method='post' >
+                  <% session[:booking_id] = booking.id %>
+                  <input type='submit' value='Accept'>
+                </form>
+                <form action='/response-<%=false%>-<%=@space.id%>' method='post' >
+                  <% session[:booking_id] = booking.id %>
+                  <input type='submit' value='Decline'>
+                </form>
+              </div>
+            <%end%>
+          <%end%>
         <% else %>
           No requests for this space yet
         <% end %>
@@ -35,7 +52,8 @@
           <label for :date>What night would you like to stay?</label>
           <input type="text" name="date" placeholder="DD/MM/YY"/>
           <% session[:space_id] = @space[:id] %>
-          <input type="submit" name="Request Booking" value="Request Booking">
+          <input type="submit" name="Request Booking" value="Request Booking"><br/>
+          <%= flash[:booking_out_of_range] %>
         </form>
       </div>
       <% end %>

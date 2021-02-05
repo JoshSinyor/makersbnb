@@ -29,6 +29,6 @@ feature "booking a space" do
     sign_in
     click_on DEFAULT_SPACE_NAME
 
-    expect(page).to have_content "Booking requested."
+    expect(page).to have_content "Booking requested for the night of #{DEFAULT_BOOKING_DATE}."
   end
 end

@@ -67,13 +67,30 @@ class MakersBNBapp < Sinatra::Base
 
     @space = Space.where(id: params[:id])[0]
     @owner = User.find(@space.user_id)
-    @bookings = Booking.where(space_id: @space.id)[0]
+    @bookings = Booking.where(space_id: @space.id)
+    p @bookings
+    p @bookings[0]
     erb :listing
   end
 
   post '/listing-:id' do
     session[:booking_requested] = true
     session[:listing_id] = params[:id]
+
+    start_date = Date.strptime(Space.find(params[:id]).start_date, "%d/%m/%y")
+    end_date = Date.strptime(Space.find(params[:id]).end_date, "%d/%m/%y")
+    booking_date = Date.strptime(params[:date], "%d/%m/%y")
+    p "HERE in LISTING ID!! \n\n\n"
+    p start_date
+    p end_date
+    p booking_date
+    p (start_date..end_date).include?(booking_date)
+
+    if (start_date..end_date).include?(booking_date) == false
+      flash[:booking_out_of_range] = "This space is not available on that date."
+      redirect '/listing-:id'
+    end
+    
 
     booking = Booking.new(start_date: params['date'],
                           space_id: session[:space_id],
@@ -118,6 +135,7 @@ class MakersBNBapp < Sinatra::Base
 
   get '/sign_out' do
     session[:session_user] = nil
+    session[:booking_requested] = nil
     redirect '/'
   end
 
@@ -126,9 +144,9 @@ class MakersBNBapp < Sinatra::Base
     erb :my_spaces
   end
 
-  get '/my_requests' do
-    @requests = Booking.where(user_id: session[:session_user].id)
-    erb :my_requests
+  post '/response-:return-:space_id' do
+    Booking.where(id: session[:booking_id]).update_all(accepted: params[:return])
+    redirect "/listing-#{params[:space_id]}"
   end
 
 end
