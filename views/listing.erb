@@ -35,7 +35,8 @@
           <label for :date>What night would you like to stay?</label>
           <input type="text" name="date" placeholder="DD/MM/YY"/>
           <% session[:space_id] = @space[:id] %>
-          <input type="submit" name="Request Booking" value="Request Booking">
+          <input type="submit" name="Request Booking" value="Request Booking"><br/>
+          <%= flash[:booking_out_of_range] %>
         </form>
       </div>
       <% end %>
