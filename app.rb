@@ -52,10 +52,10 @@ class MakersBNBapp < Sinatra::Base
     if params[:id] == ":id"
       params[:id] = session[:listing_id]
     end
-    
+
     @space = Space.where(id: params[:id])[0]
     @owner = User.find(@space.user_id)
-    @bookings = Booking.where(space_id: params[:id])
+    @bookings = Booking.where(space_id: @space.id)[0]
     erb :listing
   end
 
@@ -111,7 +111,6 @@ class MakersBNBapp < Sinatra::Base
 
   get "/my_spaces" do
     @spaces = Space.where(user_id: session[:session_user].id)
-    p @spaces
     erb :my_spaces
   end
 

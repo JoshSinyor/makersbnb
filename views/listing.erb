@@ -19,22 +19,32 @@
 </div>
 
 <div>
-  <% if @login.id == @space.user_id %>
-    <%= @bookings %>
+  <% if @login.nil? %>
+    You need to login to book a space.
   <% else %>
-  <div>
-    <form action='/listing-<%= @space[:id] %>' method="post">
-      <label for :date>What night would you like to stay?</label>
-      <input type="text" name="date" placeholder="DD/MM/YY"/>
-      <% session[:space_id] = @space[:id] %>
-      <input type="submit" name="Request Booking" value="Request Booking">
-    </form>
-  </div>
-  <% end %>
-  </div>
-<div>
-  <% if @booking %>
-    Booking request accepted.
-    <%= @owner.user_name %> will check this soon.
+    <div>
+      <% if @login.id == @space.user_id %>
+        <% if @bookings.accepted.nil? %>
+          Booking requested.
+        <% else %>
+          No requests for this space yet
+        <% end %>
+      <% else %>
+      <div>
+        <form action='/listing-<%= @space[:id] %>' method="post">
+          <label for :date>What night would you like to stay?</label>
+          <input type="text" name="date" placeholder="DD/MM/YY"/>
+          <% session[:space_id] = @space[:id] %>
+          <input type="submit" name="Request Booking" value="Request Booking">
+        </form>
+      </div>
+      <% end %>
+      </div>
+    <div>
+      <% if @booking %>
+        Booking request accepted.
+        <%= @owner.user_name %> will check this soon.
+      <% end %>
+    </div>
   <% end %>
 </div>
