@@ -46,14 +46,16 @@ class MakersBNBapp < Sinatra::Base
   end
 
   get '/listing-:id' do
-    @login_status = session[:session_user]
+    @login = session[:session_user]
     @booking = session[:booking_requested]
+
     if params[:id] == ":id"
       params[:id] = session[:listing_id]
     end
 
     @space = Space.where(id: params[:id])[0]
     @owner = User.find(@space.user_id)
+    @bookings = Booking.where()
     erb :listing
   end
 
@@ -63,8 +65,7 @@ class MakersBNBapp < Sinatra::Base
 
     booking = Booking.new(start_date: params['date'],
                           space_id: session[:space_id],
-                          user_id: session[:session_user].id,
-                          accepted: false)
+                          user_id: session[:session_user].id)
 
     booking.save
     redirect '/listing-:id'

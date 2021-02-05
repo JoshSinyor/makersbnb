@@ -1,6 +1,6 @@
 <div class="topnav">
   <a name="home_button" href="/">Home</a>
-  <% if !@login_status %>
+  <% if !@login %>
     <a name="sign_in_button" href="/sign_in">Sign In</a>
     <a name="register_button" href="/register">Register</a>
   <%else%>
@@ -17,15 +17,21 @@
   <%= '£%.2f' % @space[:price] %>/night<br/>
   This space is available from <%= @space[:start_date] %> to <%= @space[:end_date] %>. Book now!<br/>
 </div>
-<div>
-  <form action='/listing-<%= @space[:id] %>' method="post">
-    <label for :date>What night would you like to stay?</label>
-    <input type="text" name="date" placeholder="DD/MM/YY"/>
-    <% session[:space_id] = @space[:id] %>
-    <input type="submit" name="Request Booking" value="Request Booking">
-  </form>
-</div>
 
+<div>
+  <% if @login.id == @space.user_id %>
+    <%
+  <% else %>
+  <div>
+    <form action='/listing-<%= @space[:id] %>' method="post">
+      <label for :date>What night would you like to stay?</label>
+      <input type="text" name="date" placeholder="DD/MM/YY"/>
+      <% session[:space_id] = @space[:id] %>
+      <input type="submit" name="Request Booking" value="Request Booking">
+    </form>
+  </div>
+  <% end %>
+  </div>
 <div>
   <% if @booking %>
     Booking request accepted.
