@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_05_105139) do
+ActiveRecord::Schema.define(version: 2021_02_05_143705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_02_05_105139) do
     t.string "user_name", limit: 50
     t.string "user_email"
     t.string "password_digest"
+    t.string "pfp_url"
   end
 
   add_foreign_key "bookings", "spaces", on_delete: :cascade
