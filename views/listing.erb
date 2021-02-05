@@ -15,7 +15,7 @@
 <div style="border: 2px solid darkgreen" id="listing-<%= @space[:id] %>">
   <%= @space[:space_name]%><br/>
   <%= @space[:description] %><br/>
-  <img src="uploads/<%= space[:image_name] %>"/><br/>
+  <img src="uploads/<%= @space[:image_name] %>"/><br/>
   <%= '£%.2f' % @space[:price] %>/night<br/>
   This space is available from <%= @space[:start_date] %> to <%= @space[:end_date] %>. Book now!<br/>
 </div>
