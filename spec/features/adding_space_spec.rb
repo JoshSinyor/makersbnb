@@ -18,19 +18,25 @@ feature 'New Space' do
   end
 
   scenario 'user can specify available dates' do
-    fill_in 'start_date', with: '02/01/21'
-    fill_in 'end_date', with: '05/07/21'
     click_button 'Submit'
 
-    expect(page).to have_content 'This space is available from 02/01/21 to 05/07/21. Book now!'
+    expect(page).to have_content "This space is available from #{DEFAULT_START_DATE} to #{DEFAULT_END_DATE}. Book now!"
   end
 
   scenario 'space is linked to owner user' do
-    fill_in_space_form
     click_button 'Submit'
 
     space = Space.all[0]
     user = User.all[0]
     expect(user.id).to eq space.user_id
+  end
+
+  scenario 'owner user uploads an image' do
+    click_button 'Upload Image'
+    attach_file('ok', File.absolute_path('./public/default_space_image.png'))
+    click_button 'Submit'
+
+    visit '/'
+    expect(page).find have_content('default_space_image.png')
   end
 end
