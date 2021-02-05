@@ -35,13 +35,25 @@ class MakersBNBapp < Sinatra::Base
   end
 
   post '/new_space' do
+    # saving the image file
+    if params[:image_file]
+      filename = params[:image_file][:filename]
+      file = params[:image_file][:tempfile]
+      path = "./public/uploads/#{filename}"
+
+      File.open(path, 'wb') { |f| f.write(file.read) }
+    end
+
     space = Space.new(space_name: params['space_name'],
                       description: params['description'],
                       price: params['price'],
                       start_date: params['start_date'],
                       end_date: params['end_date'],
-                      user_id: session[:session_user].id)
+                      user_id: session[:session_user].id,
+                      image_name: params['image_file'][:filename])
     space.save
+
+
     redirect '/'
   end
 
